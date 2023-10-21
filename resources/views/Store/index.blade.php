@@ -1,7 +1,6 @@
 @extends("Base")
 @section("title","Products")
 @section("main")
-
     <div class="d-flex justify-content-between mt-4 align-items-center">
         <h1>Last products </h1>
     </div>
