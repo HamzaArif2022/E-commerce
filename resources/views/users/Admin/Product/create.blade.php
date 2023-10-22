@@ -1,4 +1,4 @@
-@extends("Base")
+@extends("users.Admin.main")
 @section("title","Products")
 @section("main")
     <h1>Create Product</h1>

@@ -1,5 +1,8 @@
-@extends("Base")
+@extends("users.Admin.main")
 @section("title","Products")
+@hasSection("sidebar")
+    @include("users.Admin.sidebar")
+@endif
 @section("main")
     <div class="d-flex justify-content-between mt-4 align-items-center">
         <h1>Last products </h1>

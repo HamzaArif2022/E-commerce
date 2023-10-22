@@ -1,4 +1,4 @@
-@extends("Base")
+@extends("users.Admin.main")
 @section("title","Categories")
 @section("main")
     <div class="d-flex justify-content-between align-items-center">

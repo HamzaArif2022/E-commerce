@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        return view("Product.create", compact("categories"));
+        return view("users.Admin.Product.create", compact("categories"));
     }
 
     /**
@@ -58,7 +58,7 @@ class ProductController extends Controller
         $categories = Category::all();
 
 
-        return view("Product.update", compact("product", "categories"));
+        return view("users.Admin.Product.update", compact("product", "categories"));
     }
 
     /**

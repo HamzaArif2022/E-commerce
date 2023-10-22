@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories=Category::query()->paginate(5);
-        return view("Categories.index",compact("categories"));
+        return view("users.Admin.Categories.index",compact("categories"));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view("Categories.create");
+        return view("users.Admin.Categories.create");
     }
 
     /**
@@ -42,7 +42,7 @@ class CategoryController extends Controller
     {
         $product_category=$category->products()->get();
 
-        return view("Categories.show",compact("product_category","category"));
+        return view("users.Admin.Categories.show",compact("product_category","category"));
     }
 
     /**

@@ -50,6 +50,7 @@ class User extends Authenticatable
     {
         return $this->getAttribute("role") === $role; // getAttributes return the value from the table based on the authetified user
     }
+
     public function isAdmin(): bool
     {
         return $this->hasRole("admin"); //return boolean
@@ -66,15 +67,17 @@ class User extends Authenticatable
 
 
     }
+
     ////////////////// default redirection when the user authentificated
-    public  function  getDefaultRedirectionRout(){
-        if ($this->isAdmin()){
+    public function getDefaultRedirectionRout()
+    {
+        if ($this->isAdmin()) {
             return ("admin_dashboard");
-        }elseif ($this->isEditor()){
+        } elseif ($this->isEditor()) {
             return ("editor_dashboard");
 
-        }else{
-            return  RouteServiceProvider::HOME; // return the default route of breeze
+        } else {
+            return RouteServiceProvider::HOME; // return the default route of breeze
         }
     }
 

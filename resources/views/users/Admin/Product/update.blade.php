@@ -1,4 +1,5 @@
-@extends("Base")
+@extends("users.Admin.main")
+
 @section("title","Update")
 @section("main")
     <h1>Update Product</h1>

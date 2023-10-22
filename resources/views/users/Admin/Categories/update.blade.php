@@ -1,4 +1,5 @@
-@extends("Base")
+@extends("users.Admin.main")
+
 @section("title","update")
 @section("main")
     <form action="{{ route("categories.update",$category->id) }}" method="post" enctype="multipart/form-data">

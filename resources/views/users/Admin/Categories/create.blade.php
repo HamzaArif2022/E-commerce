@@ -1,4 +1,4 @@
-@extends("Base")
+@extends("users.Admin.main")
 @section("title","create")
 @section("main")
     <form action="{{ route("categories.store") }}" method="post" enctype="multipart/form-data">
