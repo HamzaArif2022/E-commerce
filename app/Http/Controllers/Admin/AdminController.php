@@ -12,7 +12,7 @@ class   AdminController extends Controller
      */
     public function index()
     {
-        return view("users.admin.main");
+        return view("users.Admin.admin_dashboard");
 
     }
 

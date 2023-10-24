@@ -79,8 +79,8 @@
 
         <div class="row">
 
-            <div class="col-md-4">@yield("sidebar")</div>{{-- fixed--}}
-            <div class="col-md-8">@yield("main")</div> {{--changeal--}}
+                <div class="col-md-3">@yield("sidebar")</div>{{-- fixed part --}}
+            <div class="col-md-9">@yield("main")</div> {{--changable part--}}
         </div>
 
     </div>

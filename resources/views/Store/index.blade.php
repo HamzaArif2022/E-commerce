@@ -1,11 +1,12 @@
 @extends("users.Admin.main")
 @section("title","Products")
-@hasSection("sidebar")
-    @include("users.Admin.sidebar")
-@endif
+@include("Store.FilterProduct")
 @section("main")
     <div class="d-flex justify-content-between mt-4 align-items-center">
-        <h1>Last products </h1>
+        <h1 >Last products </h1>
+        @auth
+            <a href="{{route("products.create")}}" class="btn btn-primary">Create Product</a>
+        @endauth
     </div>
     <div class="row row-cols-1 row-cols-md-3 mt-4 g-4">
         @foreach($products as $product)
@@ -18,7 +19,7 @@
                         <hr>
                         <div class="d-flex justify-content-between">
                             <span>Quantity:  <span class="badge bg-success">{{$product->quantity}}</span></span>
-                            <span>
+                            <span>F
 
                             Price: <span class="badge bg-primary">{{$product->price}} MAD</span>
                             </span>

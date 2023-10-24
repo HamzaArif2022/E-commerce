@@ -12,10 +12,10 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() // dispaly all product
+    public function index(Request $request) // dispaly all product
     {
-        $products = Product::query()->with("category")->latest()->get();// with is more performance then all
-        return view("Store.index", compact("products"));
+        $products = Product::query()->with("category")->paginate(4);// with is more performance then all
+        return view("users.Admin.Product.index", compact("products"));
     }
 
     /**
@@ -68,6 +68,18 @@ class ProductController extends Controller
 
     {
         $FormFields = $request->validated();
+
+        // Check if the "image" field is present in the request data
+        if ($request->hasFile('image')) {
+            // Handle image update
+            // Assuming you have an "image" field in your Product model that stores the image path.
+            // You may need to configure file upload and storage as per your application's requirements.
+            $imagePath = $request->file('image')->store("product", "public"); // Example storage folder name
+            $FormFields['image'] = $imagePath; // Update the "image" field with the new image path.
+        } else {
+            // If "image" field is not present in the request data, retain the old value
+            $FormFields['image'] = $product->image;
+        }
 
         $product->fill($FormFields)->save();
 
